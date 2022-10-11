@@ -1,0 +1,55 @@
+{
+    "name": "blomstra/turnstile",
+    "description": "Implement Cloudflare Turnstile into your Flarum forum.",
+    "keywords": [
+        "flarum"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "require": {
+        "flarum/core": "^1.2.0"
+    },
+    "authors": [
+        {
+            "name": "Blomstra team",
+            "email": "development@blomstra.net",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Blomstra\\Turnstile\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Turnstile",
+            "category": "feature",
+            "icon": {
+                "name": "fas fa-robot",
+                "color": "#3a98d0",
+                "backgroundColor": "#ebf1fd"
+            }
+        },
+        "flarum-cli": {
+            "modules": {
+                "admin": true,
+                "forum": true,
+                "js": true,
+                "jsCommon": true,
+                "css": true,
+                "locale": true,
+                "gitConf": true,
+                "githubActions": true,
+                "prettier": true,
+                "typescript": false,
+                "bundlewatch": false,
+                "backendTesting": false,
+                "editorConfig": true,
+                "styleci": true
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
