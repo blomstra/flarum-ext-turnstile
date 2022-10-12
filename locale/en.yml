@@ -3,3 +3,6 @@ blomstra-turnstile:
     settings:
       site_key: Site key
       secret_key: Secret key
+
+validation:
+  turnstile: "We couldn't verify if you're a robot or not. Please refresh the page and try again."

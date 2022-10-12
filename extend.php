@@ -11,8 +11,11 @@
 
 namespace Blomstra\Turnstile;
 
+use Blomstra\Turnstile\Listeners\AddValidatorRule;
+use Blomstra\Turnstile\Validator\TurnstileValidator;
 use Flarum\Extend;
 use Flarum\Frontend\Document;
+use Flarum\User\Event\Saving as UserSaving;
 
 return [
     (new Extend\Frontend('forum'))
@@ -32,4 +35,10 @@ return [
         ->default('blomstra-turnstile.secret_key', null)
         ->default('blomstra-turnstile.site_key', null)
         ->serializeToForum('blomstra-turnstile.site_key', 'blomstra-turnstile.site_key'),
+
+    (new Extend\Validator(TurnstileValidator::class))
+        ->configure(AddValidatorRule::class),
+
+    (new Extend\Event())
+        ->listen(UserSaving::class, Listeners\RegisterValidate::class),
 ];
