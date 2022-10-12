@@ -13,6 +13,6 @@ jobs:
       frontend_directory: ./js
       backend_directory: .
       js_package_manager: yarn
-      main_git_branch: main
+      main_git_branch: master
     secrets:
       bundlewatch_github_token: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
