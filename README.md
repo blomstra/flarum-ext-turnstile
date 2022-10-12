@@ -4,6 +4,10 @@
 
 A [Flarum](http://flarum.org) extension. Implement Cloudflare Turnstile into your Flarum forum.
 
+Turnstile is a CAPTCHA alternative that is privacy-focused. As of writing, Turnstile is in beta, and free to all Cloudflare customers on any plan.
+
+To configure this extension, you'll need to [generate Turnstile keys on your Cloudflare account](https://dash.cloudflare.com/?to=/:account/turnstile), and input these on the admin dashboard.
+
 ## Installation
 
 Install with composer:
