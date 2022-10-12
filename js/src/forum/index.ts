@@ -1,5 +1,7 @@
 import app from 'flarum/forum/app';
 
+import addTurnstileToSignUp from './extend/addTurnstileToSignUp';
+
 app.initializers.add('blomstra/turnstile', () => {
-  console.log('[blomstra/turnstile] Hello, forum!');
+  addTurnstileToSignUp();
 });
