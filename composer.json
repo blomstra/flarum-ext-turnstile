@@ -2,10 +2,16 @@
     "name": "blomstra/turnstile",
     "description": "Implement Cloudflare Turnstile into your Flarum forum.",
     "keywords": [
-        "flarum"
+        "flarum", "captcha", "cloudflare", "turnstile"
     ],
     "type": "flarum-extension",
     "license": "MIT",
+    "support": {
+        "issues": "https://github.com/blomstra/flarum-ext-turnstile/issues",
+        "source": "https://github.com/blomstra/flarum-ext-turnstile",
+        "forum": "https://discuss.flarum.org/d/18399"
+    },
+    "homepage": "https://blomstra.net",
     "require": {
         "flarum/core": "^1.2.0",
         "guzzlehttp/guzzle": "^7.0"
