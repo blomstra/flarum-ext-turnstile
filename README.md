@@ -8,6 +8,10 @@ Turnstile is a CAPTCHA alternative that is privacy-focused. As of writing, Turns
 
 To configure this extension, you'll need to [generate Turnstile keys on your Cloudflare account](https://dash.cloudflare.com/?to=/:account/turnstile), and input these on the admin dashboard.
 
+## Features
+
+At present, only the `Signup` modal is protected, further options may be added in the future.
+
 ## Installation
 
 Install with composer:
@@ -27,5 +31,5 @@ php flarum cache:clear
 ## Links
 
 - [Packagist](https://packagist.org/packages/blomstra/turnstile)
-- [GitHub](https://github.com/blomstra/turnstile)
+- [GitHub](https://github.com/blomstra/flarum-ext-turnstile)
 - [Discuss](https://discuss.flarum.org/d/PUT_DISCUSS_SLUG_HERE)
