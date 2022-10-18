@@ -32,4 +32,4 @@ php flarum cache:clear
 
 - [Packagist](https://packagist.org/packages/blomstra/turnstile)
 - [GitHub](https://github.com/blomstra/flarum-ext-turnstile)
-- [Discuss](https://discuss.flarum.org/d/PUT_DISCUSS_SLUG_HERE)
+- [Discuss](https://discuss.flarum.org/d/31790)
