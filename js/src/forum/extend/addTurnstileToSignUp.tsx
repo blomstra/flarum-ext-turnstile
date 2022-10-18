@@ -10,7 +10,7 @@ export default function addTurnstileToSignUp() {
 
   extend(SignUpModal.prototype, 'fields', function (fields) {
     fields.add(
-      'recaptcha',
+      'turnstile',
       <Turnstile
         action="sign_up"
         onTurnstileStateChange={(token) => {
