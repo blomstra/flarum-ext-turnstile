@@ -45,5 +45,5 @@ return [
         ->configure(AddValidatorRule::class),
 
     (new Extend\Event())
-        ->listen(UserSaving::class, Listeners\RegisterValidate::class)
+        ->listen(UserSaving::class, Listeners\RegisterValidate::class),
 ];
