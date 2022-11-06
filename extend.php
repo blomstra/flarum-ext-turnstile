@@ -15,6 +15,7 @@ use Blomstra\Turnstile\Listeners\AddValidatorRule;
 use Blomstra\Turnstile\Validator\TurnstileValidator;
 use Flarum\Extend;
 use Flarum\Frontend\Document;
+use Flarum\User\Event\LoggingIn;
 use Flarum\User\Event\Saving as UserSaving;
 
 return [
@@ -40,5 +41,6 @@ return [
         ->configure(AddValidatorRule::class),
 
     (new Extend\Event())
-        ->listen(UserSaving::class, Listeners\RegisterValidate::class),
+        ->listen(UserSaving::class, Listeners\RegisterValidate::class)
+        ->listen(LoggingIn::class, Listeners\LoginValidate::class),
 ];
