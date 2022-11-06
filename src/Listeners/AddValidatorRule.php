@@ -12,6 +12,7 @@
 namespace Blomstra\Turnstile\Listeners;
 
 use Blomstra\Turnstile\Turnstile\Turnstile;
+use Flarum\Forum\LogInValidator;
 use Flarum\Foundation\AbstractValidator;
 use Flarum\Settings\SettingsRepositoryInterface;
 use Illuminate\Validation\Validator;
@@ -45,5 +46,11 @@ class AddValidatorRule
                 return !empty($value) && (new Turnstile($secret))->verify($value)['success'];
             }
         );
+
+        if ($flarumValidator instanceof LogInValidator) {
+            $validator->addRules([
+                'turnstileToken' => ['required', 'turnstile'],
+            ]);
+        }
     }
 }
