@@ -21,8 +21,6 @@ export default class Turnstile extends Component<ITurnstileAttrs> {
   get config() {
     const { action } = this.attrs;
 
-    console.log(this.getCurrentTheme());
-
     return {
       action,
       theme: this.getCurrentTheme(),
@@ -51,6 +49,7 @@ export default class Turnstile extends Component<ITurnstileAttrs> {
       }
     }
 
+    // fof/nightmode is not installed, so we fall back to detecting if the forum has been set to dark mode or not.
     return !!!app.forum.attribute('turnstile_dark_mode') ? 'light' : 'dark';
   }
 
