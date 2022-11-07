@@ -12,6 +12,7 @@
 namespace Blomstra\Turnstile\Listeners;
 
 use Blomstra\Turnstile\Validator\TurnstileValidator;
+use Flarum\Settings\SettingsRepositoryInterface;
 use Flarum\User\Event\Saving;
 use Illuminate\Support\Arr;
 
@@ -22,14 +23,20 @@ class RegisterValidate
      */
     protected $validator;
 
-    public function __construct(TurnstileValidator $validator)
+    /**
+     * @var SettingsRepositoryInterface
+     */
+    protected $settings;
+
+    public function __construct(TurnstileValidator $validator, SettingsRepositoryInterface $settings)
     {
         $this->validator = $validator;
+        $this->settings = $settings;
     }
 
     public function handle(Saving $event)
     {
-        if (!$event->user->exists) {
+        if (!$event->user->exists && $this->settings->get('blomstra-turnstile.signup')) {
             $this->validator->assertValid([
                 'turnstile' => Arr::get($event->data, 'attributes.turnstileToken'),
             ]);
