@@ -17,7 +17,6 @@ use Flarum\Extend;
 use Flarum\Forum\LogInValidator;
 use Flarum\Frontend\Document;
 use Flarum\User\Event\Saving as UserSaving;
-use Illuminate\Validation\Validator;
 
 return [
     (new Extend\Frontend('forum'))
@@ -36,7 +35,8 @@ return [
     (new Extend\Settings())
         ->default('blomstra-turnstile.secret_key', null)
         ->default('blomstra-turnstile.site_key', null)
-        ->serializeToForum('blomstra-turnstile.site_key', 'blomstra-turnstile.site_key'),
+        ->serializeToForum('blomstra-turnstile.site_key', 'blomstra-turnstile.site_key')
+        ->serializeToForum('turnstile_dark_mode', 'theme_dark_mode', 'boolVal'),
 
     (new Extend\Validator(TurnstileValidator::class))
         ->configure(AddValidatorRule::class),

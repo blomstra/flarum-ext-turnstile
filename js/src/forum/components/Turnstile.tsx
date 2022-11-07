@@ -21,13 +21,37 @@ export default class Turnstile extends Component<ITurnstileAttrs> {
   get config() {
     const { action } = this.attrs;
 
+    console.log(this.getCurrentTheme());
+
     return {
       action,
+      theme: this.getCurrentTheme(),
       sitekey: app.forum.attribute('blomstra-turnstile.site_key'),
       callback: this.onTurnstileComplete.bind(this),
       'expired-callback': this.onTurnstileExpire.bind(this),
       'error-callback': this.onTurnstileError.bind(this),
     };
+  }
+
+  getCurrentTheme() {
+    const getTheme = flarum.extensions['fof-nightmode']?.getTheme;
+    const Themes = flarum.extensions['fof-nightmode']?.Themes;
+
+    if (getTheme && Themes) {
+      let currentTheme = getTheme();
+
+      if (currentTheme === Themes.AUTO) {
+        currentTheme = window.matchMedia('(prefers-color-scheme:dark)').matches ? Themes.DARK : Themes.LIGHT;
+      }
+
+      if (currentTheme === Themes.DARK) {
+        return 'dark';
+      } else if (currentTheme === Themes.LIGHT) {
+        return 'light';
+      }
+    }
+
+    return !!!app.forum.attribute('turnstile_dark_mode') ? 'light' : 'dark';
   }
 
   onTurnstileComplete(token: string) {
