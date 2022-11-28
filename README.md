@@ -10,7 +10,9 @@ To configure this extension, you'll need to [generate Turnstile keys on your Clo
 
 ## Features
 
-At present, only the `Signup` modal is protected, further options may be added in the future.
+- Protection for `Signup`, `Signin` and `Forgot Password` modals.
+- Admin selectable which modals should be protected.
+- Dark mode support for visible captcha options.
 
 ## Installation
 
