@@ -3,7 +3,7 @@
 /*
  * This file is part of blomstra/turnstile.
  *
- * Copyright (c) 2022 Blomstra team.
+ * Copyright (c) 2022 Team Blomstra.
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
@@ -40,11 +40,11 @@ class AddValidatorRule
         $validator->addExtension(
             'turnstile',
             function ($attribute, $value, $parameters) use ($secret) {
-                if (!is_string($value) || !is_string($secret)) {
+                if (! is_string($value) || ! is_string($secret)) {
                     return false;
                 }
 
-                return !empty($value) && (new Turnstile($secret))->verify($value)['success'];
+                return ! empty($value) && (new Turnstile($secret))->verify($value)['success'];
             }
         );
 

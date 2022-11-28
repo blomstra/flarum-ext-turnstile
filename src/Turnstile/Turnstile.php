@@ -3,7 +3,7 @@
 /*
  * This file is part of blomstra/turnstile.
  *
- * Copyright (c) 2022 Blomstra team.
+ * Copyright (c) 2022 Team Blomstra.
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
@@ -34,7 +34,7 @@ class Turnstile
 
     /**
      * Sends request to Cloudflare's `siteverify` endpoint and returns the raw response.
-     * 
+     *
      * To check for success, access the `success` boolean property of the associative
      * array this returns.
      *
