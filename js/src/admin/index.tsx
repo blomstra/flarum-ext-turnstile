@@ -7,6 +7,9 @@ app.initializers.add('blomstra/turnstile', () => {
       setting: 'blomstra-turnstile.site_key',
       type: 'text',
       label: app.translator.trans('blomstra-turnstile.admin.settings.site_key'),
+      help: app.translator.trans('blomstra-turnstile.admin.settings.help_text', {
+        a: <a href="https://dash.cloudflare.com/?to=/:account/turnstile" target="_blank" rel="noopener" />,
+      }),
     })
     .registerSetting({
       setting: 'blomstra-turnstile.secret_key',
