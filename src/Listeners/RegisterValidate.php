@@ -37,7 +37,7 @@ class RegisterValidate
     public function handle(Saving $event)
     {
         // We also check for the actor's admin status, so that we can allow admins to create users from the admin panel without a Turnstile token.
-        if (! $event->user->exists && $this->settings->get('blomstra-turnstile.signup') && !$event->actor->isAdmin()) {
+        if (! $event->user->exists && $this->settings->get('blomstra-turnstile.signup') && ! $event->actor->isAdmin()) {
             $this->validator->assertValid([
                 'turnstile' => Arr::get($event->data, 'attributes.turnstileToken'),
             ]);
