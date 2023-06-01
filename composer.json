@@ -13,7 +13,7 @@
     },
     "homepage": "https://blomstra.net",
     "require": {
-        "flarum/core": "^1.6.0",
+        "flarum/core": "^1.8.0",
         "guzzlehttp/guzzle": "^7.0"
     },
     "authors": [
