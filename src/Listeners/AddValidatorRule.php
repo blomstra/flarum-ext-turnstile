@@ -39,7 +39,7 @@ class AddValidatorRule
 
         $validator->addExtension(
             'turnstile',
-            function ($attribute, $value, $parameters) use ($secret) {
+            function ($attribute, $value) use ($secret) {
                 if (! is_string($value) || ! is_string($secret)) {
                     return false;
                 }
@@ -50,13 +50,13 @@ class AddValidatorRule
 
         if ($flarumValidator instanceof LogInValidator && $this->settings->get('blomstra-turnstile.signin')) {
             $validator->addRules([
-                'turnstileToken' => ['required', 'turnstile'],
+                'turnstileToken' => ['turnstile'],
             ]);
         }
 
         if ($flarumValidator instanceof ForgotPasswordValidator && $this->settings->get('blomstra-turnstile.forgot')) {
             $validator->addRules([
-                'turnstileToken' => ['required', 'turnstile'],
+                'turnstileToken' => ['turnstile'],
             ]);
         }
     }

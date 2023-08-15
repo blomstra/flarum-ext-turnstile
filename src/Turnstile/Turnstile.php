@@ -39,7 +39,7 @@ class Turnstile
      * array this returns.
      *
      * @param string $response
-     * @return void
+     * @return array
      */
     public function verify(string $response)
     {

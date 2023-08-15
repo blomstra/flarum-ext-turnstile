@@ -19,6 +19,6 @@ class TurnstileValidator extends AbstractValidator
      * {@inheritdoc}
      */
     protected $rules = [
-        'turnstile' => ['required', 'turnstile'],
+        'turnstile' => ['turnstile'],
     ];
 }
