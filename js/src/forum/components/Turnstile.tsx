@@ -97,6 +97,6 @@ export default class Turnstile extends Component<ITurnstileAttrs> {
       return <p class="BlomstraTurnstile-notLoaded">{app.translator.trans('blomstra-turnstile.forum.not_loaded_error')}</p>;
     }
 
-    return <div class="Blomstra-Turnstile" />;
+    return <div class="Blomstra-Turnstile Form-group" />;
   }
 }
