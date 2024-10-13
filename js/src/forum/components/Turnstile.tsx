@@ -24,6 +24,7 @@ export default class Turnstile extends Component<ITurnstileAttrs> {
     return {
       action,
       theme: this.getCurrentTheme(),
+      language: app.translator.getLocale() || 'auto',
       sitekey: app.forum.attribute('blomstra-turnstile.site_key'),
       callback: this.onTurnstileComplete.bind(this),
       'expired-callback': this.onTurnstileExpire.bind(this),
